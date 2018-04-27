@@ -29,6 +29,9 @@ $langCode= (isset($langCode)) ? $langCode :  "en";
 
 
 
+  #menu-background{
+  background-color: #009688 ;
+}
 	</style>
 </head>
 <body class="app sidebar-mini rtl">

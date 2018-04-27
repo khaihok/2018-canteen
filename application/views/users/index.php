@@ -1,11 +1,5 @@
 
 <main class="app-content">
-  <div class="app-title">
-    <div>
-      <h1>List all foods</h1>
-      <p>A free posting food here!</p>
-    </div>
-  </div>
     <div class="container">
     <div class="row">
       <div class="col-md-12">
