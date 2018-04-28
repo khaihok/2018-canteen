@@ -37,8 +37,8 @@ class Users extends CI_Controller {
     }
 
     /**
-     * Display the list of all users
-     * @author Benjamin BALET <benjamin.balet@gmail.com>
+     * Display the list of all food
+     * @author khai hok <khai.hok.passerellesnumeriques.org>
      */
     public function index() {
         $this->load->helper('form');
@@ -51,6 +51,7 @@ class Users extends CI_Controller {
         $this->load->view('users/index', $data);
         $this->load->view('templates/footer', $data);
     }
+
 
     /**
      * Set a user as active (TRUE) or inactive (FALSE)

@@ -112,7 +112,6 @@
 	    display: block;
 	}
 
-
 	.sidenav2 a:hover {
 	    color: #f1f1f1;
 	}
@@ -174,6 +173,9 @@
 				    				<a href="#" class="text-secondary">45&nbsp; <i class="mdi mdi-thumb-up text-info"></i>&nbsp; Interest</a>
 				    			</div>
 				    			 <?php if($this->session->loggedIn === TRUE) { ?>
+				    			<div class="col-md-4">
+				    				<a href="#" class="text-secondary">45&nbsp; <i class="mdi mdi-thumb-up text-info"></i>&nbsp; Interest</a>
+				    			</div>
 						    	<div class="col-md-4 item">
 						    		<a data-toggle="modal" data-target="#exampleModal" 
 						    		data-whatever="@getbootstrap"><i class="mdi mdi-rice text-info"></i>&nbsp;Order</a>
@@ -304,7 +306,6 @@
 	  });
 	});
 </script>
-
 
 
  <div class="container">
@@ -463,6 +464,4 @@
 			<?php } ?>
 		</div>
 	</div>
-
-
 
