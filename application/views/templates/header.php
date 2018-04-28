@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-$title = (isset($title)) ? $title :  "Skeleton";
+$title = (isset($title)) ? $title :  "PNC CANTEEN";
 $langCode= (isset($langCode)) ? $langCode :  "en";
 
 ?><!DOCTYPE html>
@@ -8,7 +8,7 @@ $langCode= (isset($langCode)) ? $langCode :  "en";
 <head>
 	<meta charset="utf-8">
 	<title><?php echo $title; ?></title>
-  <link rel="shortcut icon" href="<?php echo base_url();?>favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="<?php echo base_url();?>assets/images/canteen-logo.png" type="image/x-icon">
   <link rel="stylesheet" href="<?php echo base_url();?>assets/bootstrap-4.0.0/css/bootstrap.min.css">
   <link href="<?php echo base_url();?>assets/MDI-2.1.19/css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />
 
@@ -20,18 +20,14 @@ $langCode= (isset($langCode)) ? $langCode :  "en";
   <script src="<?php echo base_url();?>assets/tether-1.4.3/js/tether.min.js"></script>
   <script src="<?php echo base_url();?>assets/js/popper-1.12.9..min.js"></script>
   <script src="<?php echo base_url();?>assets/bootstrap-4.0.0/js/bootstrap.min.js"></script>
- 
 
 	<style type="text/css">
   body {
       padding-top: 60px;
   }
-
-
-
   #menu-background{
   background-color: #009688 ;
-}
+  }
 	</style>
 </head>
-<body class="app sidebar-mini rtl">
+<body>
