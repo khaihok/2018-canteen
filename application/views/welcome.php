@@ -3,6 +3,11 @@
 <link rel="stylesheet" href="<?php echo base_url();?>assets/bootstrap-datepicker-1.7.1/css/bootstrap-datepicker.min.css">
 <script src="<?php echo base_url();?>assets/bootstrap-datepicker-1.7.1/js/bootstrap-datepicker.min.js"></script>
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/left_menu.css">
+<style>
+	.Uninterest{
+		display: none;
+	}
+</style>
 <br><br>
 <div class="row">
 	<div class="col-lg-2 col-md-0 col-sm-0 col-xs-0"></div>
@@ -64,9 +69,12 @@
 							<div class="container">
 								<div class="row">
 									<?php if($this->session->loggedIn === TRUE) { ?>
-									<div class="col-md-4">
-										<a href="#" >45&nbsp; <i class="mdi mdi-thumb-up "></i>&nbsp; Interest</a>
-									</div>				    			
+									<div class="col-md-4 Interest">
+				    				<a class="interest" href="#" name="view" value=view" id="<?php echo $dish->dish_id;?>"><?php echo $dish->current_interest; ?>&nbsp; <i class="mdi mdi-thumb-up "></i>&nbsp; Interest</a>
+				    			</div>
+				    			<div class="col-md-4 Uninterest">
+				    				<a class="uninterest" href="#" name="view" style='color: orange;'value="view" id="<?php echo $dish->dish_id?>"><?php echo $dish->current_interest; ?>&nbsp; <i class="mdi mdi-thumb-down "></i>&nbsp; Interest</a>
+				    			</div>					    			
 									<div class="col-md-4 item" id="food">
 										<a href="#" name="view" value="view" id="<?php echo $dish->dish_id?>" class="view_data"><i class="mdi mdi-rice"></i>Order</a>	
 									</div>			    					    	
@@ -102,11 +110,14 @@
 							</div> 
 							<div class="card-footer">
 								<div class="container">
-									<div class="row">
-										<?php if($this->session->loggedIn === TRUE) { ?>
-										<div class="col-md-4">
-											<a href="#" >45&nbsp; <i class="mdi mdi-thumb-up "></i>&nbsp; Interest</a>
-										</div>				    			
+										<div class="row">
+											<?php if($this->session->loggedIn === TRUE) { ?>
+											<div class="col-md-4 Interest">
+					    				    <a class="interest" href="#" name="view" value=view" id="<?php echo $dish->dish_id;?>"><?php echo $dish->current_interest; ?>&nbsp; <i class="mdi mdi-thumb-up "></i>&nbsp; Interest</a>
+				    			        </div>
+						    			<div class="col-md-4 Uninterest">
+						    				<a class="uninterest" href="#" name="view" style='color: orange;'value="view" id="<?php echo $dish->dish_id?>"><?php echo $dish->current_interest; ?>&nbsp; <i class="mdi mdi-thumb-down "></i>&nbsp; Interest</a>
+						    			</div>					    			
 										<div class="col-md-4 item" id="food">
 											<a href="#" name="view" value="view" id="<?php echo $dish->dish_id?>" class="view_data"><i class="mdi mdi-rice"></i>Order</a>	
 										</div>			    					    	
@@ -137,6 +148,7 @@
 			</div>
 		</div>
 	</div>
+
 	<!-- End of modal creation -->
 	<script>
 		$(document).ready(function(){  
@@ -159,7 +171,39 @@
 					$('.view_data').text("Edit Order");
 				}
 			});
-		});  
+
+			$('.interest').click(function(){
+	        	var dish_id = $(this).attr("id");
+	        	$('.Interest').hide();
+		        $('.Uninterest').show();  
+				$.ajax({  
+					url:"<?php echo base_url() ?>admin/food/storeInterest",  
+					method:"post",  
+					data:{dish_id:dish_id},  
+					success:function(data){ 
+						// $("#data").html(data);
+						// $('#dataModal').modal("show");
+						// $('.view_data').text("Edit Order");
+					}  
+				});  
+            });
+  
+         $('.uninterest').click(function(){
+           var dish_id = $(this).attr("id");
+	        	$('.Interest').show();
+		        $('.Uninterest').hide();  
+				$.ajax({  
+					url:"<?php echo base_url() ?>admin/food/storeUninterest",  
+					method:"post",  
+					data:{dish_id:dish_id},  
+					success:function(data){ 
+						// $("#data").html(data);
+						// $('#dataModal').modal("show");
+						// $('.view_data').text("Edit Order");
+					}  
+				});  
+         }); 
+	});  
 		$(document).ready(function(){
 			$('[data-toggle="tooltip"]').tooltip();   
 		});

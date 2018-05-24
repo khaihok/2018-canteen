@@ -64,7 +64,8 @@ Class calendar extends CI_Controller{
 	{
 		$result=$this->Calendar_model->addLunchEvent();
 		echo $result;
-	/*Sending email to invite the staff the join the lunch in PNC*/
+
+		/*Sending email to invite the staff the join the lunch in PNC*/
 		$config = array(
 		'protocol' => 'smtp',
 		'smtp_host' => 'ssl://smtp.googlemail.com',
@@ -103,7 +104,7 @@ Class calendar extends CI_Controller{
 		   	$this->email->from('pnc.temporary.vc2018@passerellesnumeriques.org', 'Admin & Finance');
 		    $this->email->to('sun.meas@student.passerellesnumeriques.org');
 		    $this->email->subject('Lunch Invitation Updated');
-		    $this->email->message('');
+		    $this->email->message('You are invited to join lunch at PNC');
 		    $this->email->send();
 	}
 
