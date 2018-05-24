@@ -1,7 +1,7 @@
 <?php
 /**
  * This controller serves the user management pages and tools.
- * @copyright  Copyright (c) 2018-2019 hok khai
+ * @copyright  Copyright (c) 2017-2018 hok khai
  * @license    http://opensource.org/licenses/AGPL-3.0 AGPL-3.0
  * @link       https://github.com/bbalet/skeleton
  * @since      0.1.0
@@ -217,7 +217,6 @@ public function add_dish()
             }
         }
         // do something after insert to DB
-  
   }
 
     function createMenu(){

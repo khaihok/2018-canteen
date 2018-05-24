@@ -36,14 +36,12 @@ class Dishes extends CI_Controller {
     }
 
     /**
-     * Display the list of all users
+     * Display the list of all food
      * @author Khai HOK <khai.hok@student.passerellesnumeriques.org>
      */
     public function index() {
         $this->load->helper('form');
         $data['users'] = $this->users_model->getUsersAndRoles();
-        $data['title'] = 'List of users';
-        $data['activeLink'] = 'users';
         $data['flashPartialView'] = $this->load->view('templates/flash', $data, TRUE);
         $this->load->view('templates/header', $data);
         $this->load->view('menu/admin_dasboard', $data);
