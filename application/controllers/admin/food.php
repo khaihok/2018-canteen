@@ -93,7 +93,7 @@ class food extends CI_Controller {
        $data['title'] = 'List Favourite Food';
        $data['activeLink'] = 'users';
        $data['flashPartialView'] = $this->load->view('templates/flash', $data, TRUE);
-       $data['dishes'] = $this->foodFavorite->dishesFavorite();
+       $data['dishes'] = $this->Dishes_model->getDishes();
        $this->load->view('templates/header', $data);
        $this->load->view('menu/admin_dasboard', $data);
        $this->load->view('admin/food/favouriteFoods', $data);

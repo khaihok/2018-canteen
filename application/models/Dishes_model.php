@@ -43,19 +43,7 @@ class Dishes_model extends CI_Model {
           'dish_id' => $dish_id,
           'user_id' => $user_id
         );
-        $this->db->insert('tbl_rates', $interesData);
-
-        // $this->db->select(count('user_id'));
-        // $this->db->from('tbl_rates');
-        // $this->db->where (array('dish_id' =>$dish_id));
-        // $query = $this->db->get();
-        // $result= $query->result();
-      
-        // $interestDish = array(
-        //    'current_interest'   => $result
-        // );
-        // $this->db->where('dish_id', $dish_id);
-        // $this->db->update('tbl_dishes ', $interestDish); 
+        $this->db->insert('tbl_rates', $interesData); 
     }
     /**
      * This function is use to delete data from tbl_rates..
@@ -175,7 +163,6 @@ public function selectDish($id){
         $query = $this->db->get();
         return $query->result();
     }
-
 
     /**
      * Get the info from tbl_dishes where dishes match with Lunch. 
